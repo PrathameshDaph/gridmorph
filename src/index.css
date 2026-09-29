@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --bg-color: #F2F5F3;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  color: #1A2821;
+  font-family: 'Inter', 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Clean light scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #EBF1EE;
+}
+::-webkit-scrollbar-thumb {
+  background: #C4D4CC;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A3BAAF;
+}
+
+/* Precision Light Panel */
+.ctrl-panel {
+  background-color: #FFFFFF;
+  border: 1px solid #DFE7E2;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px -2px rgba(24, 45, 36, 0.04);
+}
+
+.ctrl-card {
+  background-color: #F7FAF8;
+  border: 1px solid #DFE7E2;
+  border-radius: 10px;
+}
+
+/* Blueprint grid for digital twin canvas */
+.blueprint-grid {
+  background-image: 
+    linear-gradient(to right, rgba(90, 110, 100, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(90, 110, 100, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Power flow dash animation */
+@keyframes flowDash {
+  0% {
+    stroke-dashoffset: 24;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-power-flow {
+  stroke-dasharray: 5 5;
+  animation: flowDash 1.6s linear infinite;
+}
+
+.animate-reverse-flow {
+  stroke-dasharray: 5 5;
+  animation: flowDash 1.6s linear infinite reverse;
+}
